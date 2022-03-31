@@ -17,12 +17,20 @@ web = webdriver.Chrome(options=options)
 # Constants
 startBookingDate = datetime.today().strftime('%Y-%m-%d') # Start searching today, if you want to start some other day, just change this to a date with the format YYYY-MM-DD
 endBookingDate = "2022-12-24" # The last date you want to search for
-firstDate = False # If you want to look for the first date using "First available time", change to True
+firstDate = True # If you want to look for the first date using "First available time", change to True
 people = [
     { 
-        "firstName": "Test", 
-        "lastName": "Testsson"
+        "firstName": "Theodor Matthew Birger", 
+        "lastName": "Bernroth Schnedier"
     }
+    {
+"firstName": "Ludvig Axel Monpier",
+"lastName": "Bernroth Schneider"
+}
+    {
+"firstName": "Leopod Jaques Nicholas",
+"lastName": "Bernroth Schneider"
+}
 ]
 emailAddress = 'test@test.se' # Your email
 phoneNumber = '076127567' # Your phone number
@@ -118,10 +126,10 @@ def clickTimeIfExists():
             web.find_element(by=By.XPATH, value='//*[@id="Main"]/form/div/input').click()
             time.sleep(1)
             # Fill out your personal information
-            web.find_element(by=By.XPATH, value='//*[@id="EmailAddress"]').send_keys(emailAddress)
-            web.find_element(by=By.XPATH, value='//*[@id="ConfirmEmailAddress"]').send_keys(emailAddress)
-            web.find_element(by=By.XPATH, value='//*[@id="PhoneNumber"]').send_keys(phoneNumber)
-            web.find_element(by=By.XPATH, value='//*[@id="ConfirmPhoneNumber"]').send_keys(phoneNumber)
+            web.find_element(by=By.XPATH, value='//*[@id="EmailAddress"]').send_keys(MATT@OURECOLUTION.COM)
+            web.find_element(by=By.XPATH, value='//*[@id="ConfirmEmailAddress"]').send_keys(MATT@OURECOLUTION.COM)
+            web.find_element(by=By.XPATH, value='//*[@id="PhoneNumber"]').send_keys(0730889884)
+            web.find_element(by=By.XPATH, value='//*[@id="ConfirmPhoneNumber"]').send_keys(0730889884)
             web.find_element(by=By.XPATH, value='//*[@id="Main"]/form/div[1]/div[5]/div/label[1]').click()
             web.find_element(by=By.XPATH, value='//*[@id="Main"]/form/div[1]/div[5]/div/label[2]').click()
             web.find_element(by=By.XPATH, value='//*[@id="Main"]/form/div[1]/div[6]/div/label[1]').click()
